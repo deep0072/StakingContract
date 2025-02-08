@@ -9,17 +9,17 @@ contract OrcaCoin is ERC20 {
 
     constructor(address _stakingContract) ERC20("Orca Coin", "ORCA") {
         stakingContract = _stakingContract;
-        owner = msg.sender;
+       
     }
 
     modifier onlyOwner() {
-        require(msg.sender == owner, "not authorized");
+        require(msg.sender == stakingContract, "not authorized");
         _;
     }
 
-    function mint(address _stakingContract, uint256 _amount) external onlyOwner {
+    function mint(address to, uint256 _amount) external onlyOwner {
        
-        _mint(_stakingContract, _amount);
+        _mint(to, _amount);
     }
 
     function updateStakingContract(address _stakingContract) public onlyOwner {

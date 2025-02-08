@@ -13,7 +13,7 @@ contract Stake {
     mapping(address => uint256) public tokenBalance;
     mapping(address => uint256) public totalReward;
     mapping(address => uint256) lastUpdatedTime;
-    uint256 public constant REWARD_PER_SEC_PER_ETH = 1;
+    uint256 public constant REWARD_PER_SEC_PER_ETH = 5;
 
     IOrcaCoin public orcaCoin;
 
